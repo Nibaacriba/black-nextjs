@@ -3,11 +3,13 @@ import type { NextApiRequest, NextApiResponse } from "next";
 
 type Data = {
   name: string;
+  timeStamp: Date;
 };
 
 export default function handler(
   req: NextApiRequest,
-  res: NextApiResponse<Data>,
+  res: NextApiResponse<Data>
 ) {
-  res.status(200).json({ name: "John Doe" });
+  const timeStamp = new Date();
+  res.status(200).json({ name: "John Doe", timeStamp });
 }
