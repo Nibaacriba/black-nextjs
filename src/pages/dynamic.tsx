@@ -5,6 +5,7 @@ import { Col, Container, Row } from "reactstrap";
 interface ApiResponse {
   name: string;
   timeStamp: Date;
+  pokemon: string;
 }
 
 export const getServerSideProps: GetServerSideProps = async () => {
@@ -41,6 +42,9 @@ const Dynamic: NextPage = (props: {
           <h3>
             Gerado no servidor: {props?.serverSideData?.timeStamp.toString()}
           </h3>
+        </Col>
+        <Col>
+          <h3>Gerado no servidor: {props?.serverSideData?.pokemon}</h3>
         </Col>
 
         <Col>

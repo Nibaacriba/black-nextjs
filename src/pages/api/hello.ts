@@ -4,6 +4,7 @@ import type { NextApiRequest, NextApiResponse } from "next";
 type Data = {
   name: string;
   timeStamp: Date;
+  pokemon: string;
 };
 
 export default function handler(
@@ -11,5 +12,6 @@ export default function handler(
   res: NextApiResponse<Data>
 ) {
   const timeStamp = new Date();
-  res.status(200).json({ name: "John Doe", timeStamp });
+  const pokemon = "pikachu";
+  res.status(200).json({ name: "John Doe", timeStamp, pokemon });
 }
